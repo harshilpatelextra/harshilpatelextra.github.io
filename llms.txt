@@ -1,0 +1,25 @@
+# Hoplink
+
+> Hoplink is a developer-first short link platform: create branded short links through a REST API, a web dashboard, a Node.js SDK or a CLI, see who clicks them (clicks, unique visitors, referrers, countries, by day or by hour), and get every event pushed to your own systems as signed webhooks.
+
+Hoplink is built for product, marketing and growth teams at software companies who need short links they can create from code, track, and connect to their own tools.
+
+## Product
+
+- Links: short links with a generated or custom slug, tags, an expiry date, a fallback URL for archived or expired links, archive and delete. Bulk creation of up to 100 links per request.
+- Click analytics: total clicks, unique visitors (privacy-preserving hash, no IPs stored), clicks by day or by hour, top referrers and countries.
+- Webhooks: link.created, link.updated, link.deleted and link.clicked events, signed with HMAC-SHA256 (Hoplink-Signature header), retried up to 3 times.
+- Dashboard: create and manage links, view stats and charts, download QR codes, manage webhook endpoints.
+- Node.js SDK (@hoplink/node): typed client with automatic retries and webhook signature verification.
+- CLI (hoplink): shorten links, list them and read stats from a terminal.
+
+## API basics
+
+- Base URL: https://api.hoplink.dev, versioned by date (Hoplink-Version header).
+- Auth: bearer API keys, hl_test_ (test) and hl_live_ (live).
+- Limits: 100 requests per minute per key; cursor pagination with limit and starting_after.
+- Errors: one JSON shape, { "error": { "type", "code", "message", "param" } }.
+
+## Links
+
+- Website: https://harshilpatelextra.github.io/
